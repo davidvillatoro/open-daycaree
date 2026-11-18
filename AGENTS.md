@@ -8,6 +8,52 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
+<!-- BEGIN:nextjs-agent-feedback -->
 
-## MCPs
--playwright capturas o Screenshots y cualquier otra cosa relacionada a playwright tiene que estar en la carpeta  .playwright-mcp.
+## Report Next.js feedback
+
+The project owner enabled `experimental.agentFeedback`, authorizing this feedback pass. When enabled, `next dev` writes this block and restores it if removed. Commit `AGENTS.md` with your work to keep the tree clean.
+
+During the current user request, retain anonymized facts as feedback candidates for meaningful or recurring Next.js issues:
+
+- Crashes, hangs, OOMs, or unexpected slowness
+- Incorrect behavior, output, errors, or diagnostics
+- Missing, unclear, or conflicting documentation
+- Unexpected CLI, codemod, Skill, or upgrade behavior and non-obvious workarounds
+
+Continue the current user request without reporting immediately. Routine debugging is not feedback. Verify changes before retaining them as feedback candidates. Never retain code, logs, paths, URLs, secrets, personal information, or project-specific data.
+
+Retain qualifying friction even if it is later fixed or worked around; record the final outcome during the reporting pass.
+
+Before the final response, run one reporting pass. If candidates remain, from this file's directory run `npx --no-install next internal agent-feedback-instructions` once without piping or truncating its output. Follow its output or error guidance. If a network sandbox blocks it, retry with network access; if it still returns no output, continue normally.
+
+<!-- END:nextjs-agent-feedback -->
+
+## Comandos
+
+- `npm run dev` (http://localhost:3000), `npm run build`, `npm run start`.
+- No hay script de tests ni de typecheck: usa `npx tsc --noEmit`; `npm run build` también corre TypeScript.
+- `npm run lint` es `eslint` sin argumentos y hoy falla por `references/pantallas/support.js` (generado, 2 errores). Para revisar solo la app: `npx eslint app`.
+
+## Arquitectura / fuente de verdad
+
+- Package único de Next 16 App Router; no hay monorepo, CI ni suite de tests.
+- `app/page.tsx` y `README.md` siguen siendo boilerplate de create-next-app. La UI objetivo está en `references/pantallas/*.dc.html` y `references/screenshots/*.png` (pantallas de OpenDayCare en español).
+- `references/pantallas/support.js` es generado (el header indica `cd dc-runtime && bun run build`; `dc-runtime/` no está en este repo). No editarlo a mano.
+- `next.config.ts` habilita `cacheComponents`, `partialPrefetching`, `experimental.agentFeedback` y Tailwind vía Turbopack con `@tailwindcss/turbopack`; no hay `tailwind.config.*` ni `postcss.config.*`.
+- `app/layout.tsx` usa el tipo global generado por Next `LayoutProps<"/">`; no reemplazarlo por un tipo de props manual.
+
+## MCP
+
+- Los artefactos de Playwright (screenshots, snapshots, logs) van en `.playwright-mcp/` (ya ignorado por git).
+- Usar Context7 para documentación actualizada de frameworks/librerías.
+
+
+## Spec Driven Development
+- /spec  usaremos esta habilidad para crear las especificaciones 
+- /spec-impl usuaremos esta skill para las implementaciones 
+
+
+
+## reglas de codigo
+- usar codigo limpio, nombres, funciones, variables, etc. en ingles 
