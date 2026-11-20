@@ -18,6 +18,7 @@ export type NavItem = {
   label: string;
   icon: NavIcon;
   active?: boolean;
+  href?: string;
 };
 
 export type PostKind = "achievement" | "activity" | "announcement";
@@ -77,8 +78,8 @@ export const feedSummary: FeedSummary = {
 };
 
 export const navItems: NavItem[] = [
-  { id: "feed", label: "Feed", icon: "home", active: true },
-  { id: "ninos", label: "Niños", icon: "children" },
+  { id: "feed", label: "Feed", icon: "home", active: true, href: "/" },
+  { id: "ninos", label: "Niños", icon: "children", href: "/kids" },
   { id: "avisos", label: "Avisos", icon: "notices" },
   { id: "mi-cuenta", label: "Mi cuenta", icon: "account" },
 ];
