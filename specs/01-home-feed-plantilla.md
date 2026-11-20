@@ -1,6 +1,6 @@
 # SPEC 01 — Home feed desde plantilla
 
-> **Estado:** aprobado  
+> **Estado:** Implementado
 > **Depende de:** —  
 > **Fecha:** 2026-11-18  
 > **Objetivo:** Implementar en `/` la pantalla de feed de OpenDayCare replicando el estilo de `references/pantallas/feed.dc.html` con Tailwind y componentes React, usando datos ficticios desacoplados y navegación solo visual y responsiva, sin autenticación ni base de datos.
@@ -95,13 +95,13 @@ No se definen esquemas de BBDD ni contratos de API; el módulo es la única fuen
 
 ## Criterios de aceptación
 
-- [ ] Al acceder a `/` se muestra el feed con barra lateral (marca OpenDayCare/Sala Soles, CTA “Nueva publicación”, ítems Feed activo/Niños/Avisos/Mi cuenta y bloque de usuario), cabecera (“GUARDERÍA · SALA SOLES”, “Buenas, Caro”, “12 niños · martes 17 jun”), compositor, separador “PUBLICADO HOY” y los 3 posts (LOGRO, ACTIVIDAD con placeholder de foto, ANUNCIO) con los textos, audiencias y contadores de la referencia.
-- [ ] La UI está construida con componentes en `app/_components/feed/` y `app/page.tsx` actúa como ensamblador; el contenido visible proviene de `app/_data/feed.ts` (sin hardcodear datos de negocio en los componentes de presentación).
-- [ ] Todos los elementos interactivos aparentes (navegación, “Nueva publicación”, “Cerrar sesión”, ver foto, ver detalle, “Editar”, like, comentarios) son solo visuales, conservan el estilo y no ejecutan navegación real ni lógica.
-- [ ] Se usan Fredoka y Nunito (vía `next/font/google`) y Tailwind para los estilos, con apariencia visual equivalente a `references/pantallas/feed.dc.html` en escritorio.
-- [ ] En viewport `< md` la interfaz es usable e intuitiva (navegación/CTA accesibles, sin solapamiento ni scroll horizontal no deseado) y en `>= md` se respeta el layout de la plantilla (sidebar ~248px y área principal).
-- [ ] No se agrega autenticación, base de datos ni rutas/páginas funcionales adicionales; no se modifican archivos en `references/`.
-- [ ] `npx tsc --noEmit` y `npm run build` se ejecutan sin errores.
+- [x] Al acceder a `/` se muestra el feed con barra lateral (marca OpenDayCare/Sala Soles, CTA “Nueva publicación”, ítems Feed activo/Niños/Avisos/Mi cuenta y bloque de usuario), cabecera (“GUARDERÍA · SALA SOLES”, “Buenas, Caro”, “12 niños · martes 17 jun”), compositor, separador “PUBLICADO HOY” y los 3 posts (LOGRO, ACTIVIDAD con placeholder de foto, ANUNCIO) con los textos, audiencias y contadores de la referencia.
+- [x] La UI está construida con componentes en `app/_components/feed/` y `app/page.tsx` actúa como ensamblador; el contenido visible proviene de `app/_data/feed.ts` (sin hardcodear datos de negocio en los componentes de presentación).
+- [x] Todos los elementos interactivos aparentes (navegación, “Nueva publicación”, “Cerrar sesión”, ver foto, ver detalle, “Editar”, like, comentarios) son solo visuales, conservan el estilo y no ejecutan navegación real ni lógica.
+- [x] Se usan Fredoka y Nunito (vía `next/font/google`) y Tailwind para los estilos, con apariencia visual equivalente a `references/pantallas/feed.dc.html` en escritorio.
+- [x] En viewport `< md` la interfaz es usable e intuitiva (navegación/CTA accesibles, sin solapamiento ni scroll horizontal no deseado) y en `>= md` se respeta el layout de la plantilla (sidebar ~248px y área principal).
+- [x] No se agrega autenticación, base de datos ni rutas/páginas funcionales adicionales; no se modifican archivos en `references/`.
+- [x] `npx tsc --noEmit` y `npm run build` se ejecutan sin errores.
 
 ## Decisiones
 

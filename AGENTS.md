@@ -57,3 +57,6 @@ Before the final response, run one reporting pass. If candidates remain, from th
 
 ## reglas de codigo
 - usar codigo limpio, nombres, funciones, variables, etc. en ingles 
+
+## respuestas
+- dame las respuestas ya sea opencode o archivos que se crean en español

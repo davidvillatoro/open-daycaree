@@ -11,6 +11,7 @@ const fredoka = Fredoka({
 
 const nunito = Nunito({
   weight: ["400", "500", "600", "700", "800"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
   variable: "--font-nunito",
   display: "swap",
