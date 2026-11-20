@@ -1,6 +1,6 @@
-# SPEC 03 — Pantallas de login y activación de cuenta sin opción Personal/Familia (UI)
+﻿# SPEC 03 — Pantallas de login y activación de cuenta sin opción Personal/Familia (UI)
 
-> **Estado:** Aprobado
+> **Estado:** Implementado
 > **Depende de:** —
 > **Fecha:** 2026-11-20
 > **Objetivo:** Implementar las pantallas de inicio de sesión y activación de cuenta de OpenDayCare sin la opción Personal/Familia.
@@ -92,13 +92,13 @@ Valores concretos (idénticos a la referencia): código de invitación "7K4P9"; 
 
 ## Criterios de aceptación
 
-- [ ] `/login` muestra email y contraseña y **no** muestra el toggle "INGRESO COMO".
-- [ ] `/login` mantiene el link "¿Te invitó la guardería?" hacia la pantalla de activación.
-- [ ] `/login/activar-cuenta` muestra código de invitación, email, crear contraseña, consentimiento y botón "Activar mi cuenta".
-- [ ] Los elementos interactivos son no funcionales (sin handlers ni navegación real).
-- [ ] Las pantallas se ven **idénticas** a los archivos de referencia (`references/pantallas/login.dc.html` y `references/pantallas/activar-cuenta.dc.html`): mismos colores, tipografía (Fredoka/Nunito), tamaños, radios, sombras, espaciados, copy y layout.
-- [ ] Responsivo intuitivo.
-- [ ] `npx tsc --noEmit` y `npm run build` sin errores.
+- [x] `/login` muestra email y contraseña y **no** muestra el toggle "INGRESO COMO".
+- [x] `/login` mantiene el link "¿Te invitó la guardería?" hacia la pantalla de activación.
+- [x] `/login/activar-cuenta` muestra código de invitación, email, crear contraseña, consentimiento y botón "Activar mi cuenta".
+- [x] Los elementos interactivos son no funcionales (sin handlers ni navegación real).
+- [x] Las pantallas se ven **idénticas** a los archivos de referencia (`references/pantallas/login.dc.html` y `references/pantallas/activar-cuenta.dc.html`): mismos colores, tipografía (Fredoka/Nunito), tamaños, radios, sombras, espaciados, copy y layout.
+- [x] Responsivo intuitivo.
+- [x] `npx tsc --noEmit` y `npm run build` sin errores.
 
 ## Decisiones tomadas
 
