@@ -60,4 +60,4 @@ Before the final response, run one reporting pass. If candidates remain, from th
 - usar codigo limpio, nombres, funciones, variables, etc. en ingles 
 
 ## respuestas
-- dame las respuestas ya sea opencode o archivos que se crean en español
+- dame las respuestas , resultados etc. ya sea opencode o archivos que se crean en español
