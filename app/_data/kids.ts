@@ -63,6 +63,25 @@ export type KidsScreen = {
   addLabel: string;
 };
 
+export type AddKidModalScreenProps = {
+  title: string;
+  cancelLabel: string;
+  saveLabel: string;
+  fullNameLabel: string;
+  fullNamePlaceholder: string;
+  birthDateLabel: string;
+  birthDatePlaceholder: string;
+  roomLabel: string;
+  rooms: string[];
+  allergiesLabel: string;
+  allergiesPlaceholder: string;
+  notesLabel: string;
+  notesPlaceholder: string;
+  requiredMessage: string;
+  invalidDateMessage: string;
+  validMessage: string;
+};
+
 export const familyStatusStyles: FamilyStatusStyles = {
   activa: { label: "ACTIVA", background: "#CFEBD8", color: "#3E9B6C" },
   pendiente: { label: "PENDIENTE", background: "#F7E7A6", color: "#9A7B1E" },
@@ -75,6 +94,27 @@ export const kidsScreen: KidsScreen = {
   kidsCountLabel: "8 niños",
   searchPlaceholder: "Buscar niño…",
   addLabel: "Agregar niño",
+};
+
+export const kidRooms: string[] = ["Soles"];
+
+export const addKidModalScreen: AddKidModalScreenProps = {
+  title: "Agregar niño",
+  cancelLabel: "Cancelar",
+  saveLabel: "Guardar",
+  fullNameLabel: "NOMBRE COMPLETO",
+  fullNamePlaceholder: "Ej. Martina López",
+  birthDateLabel: "FECHA DE NACIMIENTO",
+  birthDatePlaceholder: "dd/mm/aaaa",
+  roomLabel: "SALA",
+  rooms: kidRooms,
+  allergiesLabel: "ALERGIAS (ETIQUETAS)",
+  allergiesPlaceholder: "Ej. Maní, Lactosa",
+  notesLabel: "NOTAS MÉDICAS",
+  notesPlaceholder: "Indicaciones, medicación, contactos…",
+  requiredMessage: "Campo obligatorio",
+  invalidDateMessage: "Ingresa una fecha válida (dd/mm/aaaa)",
+  validMessage: "Datos válidos",
 };
 
 export const kids: Kid[] = [
