@@ -1,6 +1,6 @@
 # SPEC 02 — Pantallas Niños y perfil del niño (UI)
 
-> **Estado:** Aprobado
+> **Estado:** Implementado
 > **Depende de:** SPEC 01
 > **Fecha:** 2026-11-20
 > **Objetivo:** Implementar en `/kids` la pantalla de Niños y en `/kids/[id]` la pantalla de perfil del niño, replicando las interfaces de `references/pantallas/ninos.dc.html` y `references/pantallas/perfil-nino.dc.html` con Tailwind y componentes React, solo interfaces (sin lógica funcional).
@@ -166,13 +166,13 @@ export const kidsNavItems: NavItem[] = navItems.map((item) =>
 
 ## Criterios de aceptación
 
-- [ ] `/kids` muestra sidebar (Brand "OpenDayCare/Sala Soles", CTA "Nueva publicación", nav Feed/Niños(activo)/Avisos/Mi cuenta, usuario Caro "Maestra · Soles", logout), h1 "Niños", CTA "Agregar niño", buscador con placeholder "Buscar niño…", etiqueta "SALA SOLES" + "8 niños", grid 2 columnas con las 8 tarjetas de `kids`.
-- [ ] Tarjetas (`KidCard`): `<a href="/kids/{id}">`; avatar 48px con color/iniciales de datos; nombre Fredoka 600 16px `#3F362E`; línea 13px `#A89A8B`; badge MANÍ/LACTOSA (`#FBD8CC`/`#D9684A`), badge VINCULAR (`#F9D2DE`/`#C56486`) o chevron 18px stroke `#CBB89F`; bg `#FFFDF9` borde `#ECE0D0` radio 18px padding 16px shadow `0 4px 14px -12px rgba(120,90,60,.5)`; hover border `#F2A78E` + translateY(-2px).
-- [ ] `/kids/mateo-fernandez` muestra: back "Volver a Niños", avatar 84px, h1 "Mateo Fernández" Fredoka, meta "3 años · Sala Soles", botón "Editar", alergies card (alerta `#F4A8A0` stroke #fff, título `#C5413A`, texto `#B25249`), tabla "Fecha de nacimiento" → "12 mar 2022", "Sala" → "Soles", "Ingreso" → "feb 2025", botón "Resumen del día" (bg #3F362E), card "PADRES VINCULADOS" con Lucía (badge ACTIVA `#CFEBD8`/`#3E9B6C`) y Diego (PENDIENTE `#F7E7A6`/`#9A7B1E`) + "Vincular otro padre" (dashed #D8CBBA, texto #C5503A).
-- [ ] Todos los elementos interactivos aparentes son no funcionales (`href="#"` o `type="button"`, sin handlers ni rutas reales).
-- [ ] Visual paridad: colores, Fredoka/Nunito, sombras, radii, espaciados equivalentes a las references.
-- [ ] Responsivo intuitivo: `< md` grid 1 col y perfil apilado; `>= md` grid 2 cols.
-- [ ] `npx tsc --noEmit` y `npm run build` sin errores.
+- [x] `/kids` muestra sidebar (Brand "OpenDayCare/Sala Soles", CTA "Nueva publicación", nav Feed/Niños(activo)/Avisos/Mi cuenta, usuario Caro "Maestra · Soles", logout), h1 "Niños", CTA "Agregar niño", buscador con placeholder "Buscar niño…", etiqueta "SALA SOLES" + "8 niños", grid 2 columnas con las 8 tarjetas de `kids`.
+- [x] Tarjetas (`KidCard`): `<a href="/kids/{id}">`; avatar 48px con color/iniciales de datos; nombre Fredoka 600 16px `#3F362E`; línea 13px `#A89A8B`; badge MANÍ/LACTOSA (`#FBD8CC`/`#D9684A`), badge VINCULAR (`#F9D2DE`/`#C56486`) o chevron 18px stroke `#CBB89F`; bg `#FFFDF9` borde `#ECE0D0` radio 18px padding 16px shadow `0 4px 14px -12px rgba(120,90,60,.5)`; hover border `#F2A78E` + translateY(-2px).
+- [x] `/kids/mateo-fernandez` muestra: back "Volver a Niños", avatar 84px, h1 "Mateo Fernández" Fredoka, meta "3 años · Sala Soles", botón "Editar", alergies card (alerta `#F4A8A0` stroke #fff, título `#C5413A`, texto `#B25249`), tabla "Fecha de nacimiento" → "12 mar 2022", "Sala" → "Soles", "Ingreso" → "feb 2025", botón "Resumen del día" (bg #3F362E), card "PADRES VINCULADOS" con Lucía (badge ACTIVA `#CFEBD8`/`#3E9B6C`) y Diego (PENDIENTE `#F7E7A6`/`#9A7B1E`) + "Vincular otro padre" (dashed #D8CBBA, texto #C5503A).
+- [x] Todos los elementos interactivos aparentes son no funcionales (`href="#"` o `type="button"`, sin handlers ni rutas reales).
+- [x] Visual paridad: colores, Fredoka/Nunito, sombras, radii, espaciados equivalentes a las references.
+- [x] Responsivo intuitivo: `< md` grid 1 col y perfil apilado; `>= md` grid 2 cols.
+- [x] `npx tsc --noEmit` y `npm run build` sin errores.
 
 ## Decisiones tomadas
 
