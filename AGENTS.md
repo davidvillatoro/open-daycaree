@@ -52,7 +52,8 @@ Before the final response, run one reporting pass. If candidates remain, from th
 ## Spec Driven Development
 - /spec  usaremos esta habilidad para crear las especificaciones 
 - /spec-impl usuaremos esta skill para las implementaciones 
-
+- spec-verifier (agente en `.opencode/agents/spec-verifier.md`): verifica criterios de aceptación de un spec, corrige el código que falle y actualiza los checkboxes.
+- Verificar spec: invocar el agente `spec-verifier` (Task con `subagent_type="spec-verifier"`) sobre `specs/NN-slug.md`.
 
 
 ## reglas de codigo
