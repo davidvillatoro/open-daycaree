@@ -1,6 +1,6 @@
 ﻿# SPEC 04 - Modal to add child from the add child button (UI)
 
-> **Status:** Implimentado
+> **Status:** Aprobado
 > **Depends on:** SPEC 02
 > **Date:** 2026-11-20
 > **Objective:** Implement in `/kids` a modal to add a child from the "Add child" button, replicating the screen from `references/pantallas/agregar-nino.dc.html` with the mandatory fields of full name, date of birth and room, plus client-side validation of those fields and the `dd/mm/aaaa` date format.
