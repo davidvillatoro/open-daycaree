@@ -1,0 +1,62 @@
+name: opencode
+
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  opencode:
+    if: |
+      github.actor == github.repository_owner &&
+      (contains(github.event.comment.body, '/oc') || contains(github.event.comment.body, '/opencode'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install OpenCode
+        run: npm install -g @opencode/cli@latest
+
+      - name: Run OpenCode
+        id: agent
+        env:
+          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
+          OPENCODE_CONFIG_CONTENT: '{}'
+          OPENCODE_CONFIG_PROJECT_DISABLE: 'true'
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        run: |
+          set -euo pipefail
+          prompt="${COMMENT_BODY//\/oc/}"
+          prompt="${prompt//\/opencode/}"
+          response="$(opencode run --auto --model opencode/big-pickle "$prompt" 2>&1 || true)"
+          response="${response:0:6000}"
+          delimiter="RESPONSE_$(openssl rand -hex 8)"
+          {
+            echo "response<<${delimiter}"
+            printf '%s\n' "$response"
+            echo "${delimiter}"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Post comment
+        uses: actions/github-script@v7
+        env:
+          RESPONSE: ${{ steps.agent.outputs.response }}
+        with:
+          script: |
+            const body = `**OpenCode**\n\n${process.env.RESPONSE || 'Sin respuesta.'}`;
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body,
+            });
