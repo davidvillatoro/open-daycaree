@@ -1,6 +1,6 @@
 # SPEC 06 — Pantalla de nueva publicación (UI)
 
-> **Status:** Implementado
+> **Status:** Implementado  
 > **Depends on:** SPEC 01
 > **Date:** 2026-11-22
 > **Objective:** Implementar en `/crear-publicacion` la pantalla de nueva publicación replicando `references/pantallas/crear-publicacion.dc.html` con Tailwind y componentes React, con datos ficticios desacoplados y acciones solo visuales (sin persistencia, backend ni lógica funcional).
