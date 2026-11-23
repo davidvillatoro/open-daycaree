@@ -9,8 +9,7 @@ type ComposerPromptProps = {
 export function ComposerPrompt({ initials, prompt }: ComposerPromptProps) {
   return (
     <a
-      href="#"
-      className="mb-5 flex items-center gap-3 rounded-[18px] border border-[#ECE0D0] bg-[#FFFDF9] p-[14px] shadow-[0_4px_14px_-10px_rgba(120,90,60,.4)] sm:mb-6 sm:gap-[14px] sm:p-[14px_18px]"
+      href="/crear-publicacion"      className="mb-5 flex items-center gap-3 rounded-[18px] border border-[#ECE0D0] bg-[#FFFDF9] p-[14px] shadow-[0_4px_14px_-10px_rgba(120,90,60,.4)] sm:mb-6 sm:gap-[14px] sm:p-[14px_18px]"
     >
       <Avatar
         tone="user"
