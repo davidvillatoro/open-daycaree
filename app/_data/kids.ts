@@ -87,6 +87,40 @@ export const familyStatusStyles: FamilyStatusStyles = {
   pendiente: { label: "PENDIENTE", background: "#F7E7A6", color: "#9A7B1E" },
 };
 
+export type LinkParentModalScreenProps = {
+  title: string;                 // "Vincular padre"
+  subtitle: string;              // "a Mateo Fernández"
+  infoText: string;              // "Le enviaremos un correo con un código para que active su cuenta. Solo verá el feed de Mateo."
+  parentNameLabel: string;      // "NOMBRE DEL PADRE/MADRE"
+  parentNamePlaceholder: string; // "Ej. Diego Fernández"
+  emailLabel: string;            // "EMAIL"
+  emailPlaceholder: string;     // "correo@ejemplo.com"
+  relationshipLabel: string;    // "PARENTESCO"
+  relationships: string[];      // ["Mamá", "Papá", "Tutor/a"]
+  codeLabel: string;             // "CÓDIGO DE InvitaciÓN"
+  codeValue: string;             // "7K4P9"
+  codeExpiry: string;            // "Vence en 7 días"
+  submitLabel: string;          // "Enviar invitación"
+};
+
+export const parentRelationships: string[] = ["Mamá", "Papá", "Tutor/a"];
+
+export const linkParentModalScreen: LinkParentModalScreenProps = {
+  title: "Vincular padre",
+  subtitle: "a Mateo Fernández",
+  infoText: "Le enviaremos un correo con un código para que active su cuenta. Solo verá el feed de Mateo.",
+  parentNameLabel: "NOMBRE DEL PADRE/MADRE",
+  parentNamePlaceholder: "Ej. Diego Fernández",
+  emailLabel: "EMAIL",
+  emailPlaceholder: "correo@ejemplo.com",
+  relationshipLabel: "PARENTESCO",
+  relationships: parentRelationships,
+  codeLabel: "CÓDIGO DE InvitaciÓN",
+  codeValue: "7K4P9",
+  codeExpiry: "Vence en 7 días",
+  submitLabel: "Enviar invitación",
+};
+
 export const kidsScreen: KidsScreen = {
   pageTitle: "Niños",
   orgLabel: "GESTIÓN",

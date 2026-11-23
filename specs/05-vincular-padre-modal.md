@@ -1,6 +1,6 @@
 # SPEC 05 - Modal to link parent for a kid (UI)
 
-> **Status:** Aprobado
+> **Status:** Implimentado
 > **Depends on:** SPEC 02
 > **Date:** 2026-11-22
 > **Objective:** Implement in `/kids/[id]` a parent-linking modal that replicates `references/pantallas/vincular-padre.dc.html`, opened from the "Vincular otro padre" button of the kid profile.
