@@ -1,6 +1,6 @@
 # SPEC 06 — Pantalla de nueva publicación (UI)
 
-> **Status:** Aprobado
+> **Status:** Implementado
 > **Depends on:** SPEC 01
 > **Date:** 2026-11-22
 > **Objective:** Implementar en `/crear-publicacion` la pantalla de nueva publicación replicando `references/pantallas/crear-publicacion.dc.html` con Tailwind y componentes React, con datos ficticios desacoplados y acciones solo visuales (sin persistencia, backend ni lógica funcional).
@@ -97,15 +97,15 @@ export const createPublicationScreen: CreatePublicationScreenProps = {
 
 ## Acceptance criteria
 
-- [ ] `/crear-publicacion` muestra la barra superior con "Cancelar", "Nueva publicación" y "Publicar".
-- [ ] La sección "PARA" muestra los chips Mateo (seleccionado), Sofía, Benjamín y "Toda la sala".
-- [ ] La sección "TIPO" muestra los siete chips con sus colores; "Comida" seleccionado.
-- [ ] El textarea de descripción muestra el placeholder y el texto precargado de la referencia.
-- [ ] La sección "FOTOS" muestra la miniatura placeholder y el botón "Agregar".
-- [ ] "Cancelar" y "Publicar" son solo visuales (`href="#"` o `type="button"` sin handlers).
-- [ ] El contenido visible proviene de `app/_data/feed.ts`.
-- [ ] `NewPostButton` y `ComposerPrompt` navegan a `/crear-publicacion`.
-- [ ] `npx tsc --noEmit` y `npm run build` pasan.
+- [x] `/crear-publicacion` muestra la barra superior con "Cancelar", "Nueva publicación" y "Publicar".
+- [x] La sección "PARA" muestra los chips Mateo (seleccionado), Sofía, Benjamín y "Toda la sala".
+- [x] La sección "TIPO" muestra los siete chips con sus colores; "Comida" seleccionado.
+- [x] El textarea de descripción muestra el placeholder y el texto precargado de la referencia.
+- [x] La sección "FOTOS" muestra la miniatura placeholder y el botón "Agregar".
+- [x] "Cancelar" y "Publicar" son solo visuales (`href="#"` o `type="button"` sin handlers).
+- [x] El contenido visible proviene de `app/_data/feed.ts`.
+- [x] `NewPostButton` y `ComposerPrompt` navegan a `/crear-publicacion`.
+- [x] `npx tsc --noEmit` y `npm run build` pasan.
 
 ## Decisions taken and discarded
 
