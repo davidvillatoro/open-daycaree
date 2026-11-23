@@ -1,6 +1,11 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
+    "github": {
+      "type": "local",
+      "command": ["C:\\Users\\vity10\\.local\\bin\\github-mcp-server.exe", "stdio"],
+      "enabled": true
+    },
     "playwright": {
       "type": "local",
       "command": ["npx", "-y", "@playwright/mcp@latest"],
